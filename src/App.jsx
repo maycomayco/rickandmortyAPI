@@ -1,5 +1,12 @@
+import { Container } from "@mui/material";
+import Home from "./pages/Home";
+
 function App() {
-  return <div className="App">helou</div>;
+  return (
+    <Container maxWidth="xl">
+      <Home />
+    </Container>
+  );
 }
 
 export default App;
