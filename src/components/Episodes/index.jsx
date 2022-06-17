@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { useEffect } from "react";
 import useEpisodes from "../../hooks/useEpisodes";
+import uuid from "../../utils";
 
 const EmptyTable = () => (
   <TableRow key={1} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
@@ -22,14 +23,6 @@ const Episodes = ({ episodes } = []) => {
   useEffect(() => {
     setEpisodesQuery(episodes);
   }, [episodes]);
-
-  /* Implementacion custom de uuid */
-  const uuid = () => {
-    const date = Date.now().toString(36);
-    const random = Math.random().toString(36).substring(2);
-
-    return `${date}${random}`;
-  };
 
   return (
     <TableContainer component={Paper}>
